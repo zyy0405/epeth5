@@ -27,5 +27,8 @@
   "name": "ePetH5New",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2"
+  }
 }
