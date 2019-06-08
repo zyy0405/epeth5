@@ -35,14 +35,14 @@ function webserver() {
       livereload: true,
       middleware: [
         proxy('/api', {
-          target: 'https://m.lagou.com',
+          target: 'https://mall.api.epet.com',
           changeOrigin: true, // 访问不同的域名，需要配置成 true
           pathRewrite: {
             '^/api': ''
           }
         }),
         proxy('/json', {
-          target: 'http://localhost:9000',
+          target: 'http://localhost:9090',
           pathRewrite: {
             '^/json': ''
           }

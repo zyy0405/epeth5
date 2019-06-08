@@ -1,0 +1,179 @@
+html {
+  font-size: 26.67vw;
+}
+.ft12 {
+  font-size: 0.12rem;
+}
+#listPages-scroll {
+  overflow: hidden;
+  height: 100%;
+}
+.listPages {
+  .head,
+  .foot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 0.4rem;
+  }
+  .head img,
+  .foot img {
+    width: 0.16rem;
+    height: 0.16rem;
+    transition: transform 150ms;
+    -webkit-transition: transform 150ms;
+  }
+  .head img {
+    transform: rotate(180deg);
+  }
+  .up {
+    transform: rotate(360deg) !important;
+    -webkit-transform: rotate(360deg) !important;
+  }
+  .down {
+    transform: rotate(180deg);
+  }
+  header {
+    height: 0.5rem;
+    line-height: 0.5rem;
+    // padding: 0 10rem;
+    @include border(0 0 1px 0, #f3f3f3);
+    // border-bottom: 1rem solid #f3f3f3;
+    background: #fff;
+    display: flex;
+    a {
+      background: url(../images/listPages/topIco.png) 0 0 no-repeat;
+      background-size: 0.35rem auto;
+    }
+    a:first-child {
+      width: 0.35rem;
+      height: 0.35rem;
+      margin: 0.07rem 0 0 0.05rem;
+    }
+    span {
+      flex: 1;
+      text-align: center;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      font-size: 0.18rem;
+    }
+    a:last-child {
+      width: 0.35rem;
+      height: 0.35rem;
+      background-position: 0 -0.7rem;
+      margin: 0.07rem 0.05rem 0 0;
+    }
+  }
+  main {
+    .topImg {
+      width: 100%;
+    }
+    .content {
+      .tab {
+        position: sticky;
+        top: 0;
+        height: 0.43rem;
+        line-height: 0.43rem;
+        background: url(../images/listPages/swiperbg.png) no-repeat;
+        background-size: 100% 100%;
+        ul {
+          display: flex;
+          li {
+            flex: 1;
+            text-align: center;
+            a {
+              display: block;
+              color: #fff;
+              font-size: 0.13rem;
+            }
+            &.active {
+              position: relative;
+              a {
+                color: #fcdf91;
+                font-weight: bold;
+              }
+              &::after {
+                content: "";
+                width: 0.15rem;
+                height: 0.5rem;
+                background: #fcdf91;
+                position: absolute;
+                bottom: 0.4rem;
+                left: 50%;
+                margin-left: -0.8rem;
+                border-radius: 0.15rem;
+              }
+            }
+          }
+        }
+      }
+      .goodsBox {
+        background: #f4a4d8;
+        padding: 0.15rem 0.1rem 0.05rem 0.1rem;
+        ul {
+          li {
+            padding: 0.2rem 0.12rem 0.2rem 0.05rem;
+            border-radius: 0.1rem;
+            margin-bottom: 0.1rem;
+            display: flex;
+            background: #fff;
+            > a {
+              flex: 1;
+              img {
+                width: 0.8rem;
+                height: 0.8rem;
+              }
+            }
+            div.rightBox {
+              margin-left: 0.1rem;
+              > a {
+                line-height: 0.18rem;
+                color: #333;
+                font-size: 0.12rem;
+              }
+              > div {
+                display: flex;
+                align-items: center;
+                > div {
+                  flex: 1;
+                  > p:first-child {
+                    color: #ff5757;
+                    font-size: 0;
+                    > span:nth-child(2) {
+                      font-weight: 700;
+                    }
+                    > span:nth-child(3) {
+                      font-size: 0.16rem;
+                      font-weight: 700;
+                    }
+                    > span::nth-child(4) {
+                      font-weight: 700;
+                    }
+                    > span:last-child {
+                      margin-left: 0.1rem;
+                    }
+                  }
+                  > p:last-child {
+                    color: #999;
+                    text-decoration: line-through;
+                  }
+                }
+                > a {
+                  width: 0.65rem;
+                  height: 0.25rem;
+                  line-height: 0.25rem;
+                  border-radius: 0.2rem;
+                  background: #ff5757;
+                  text-align: center;
+                  color: #fff;
+                  font-size: 0.12rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

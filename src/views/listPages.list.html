@@ -1,0 +1,21 @@
+{{each data}}
+<li data-id="{{$value['gid']}}">
+    <a href="#"><img src="{{$value['photo']}}" alt=""></a>
+    <div class="rightBox">
+        <a href="#">{{$value['edit_subject']}}</a>
+        <div>
+            <div>
+                <p>
+                    <span class="ft12">预售价</span>
+                    <span class="ft12">:¥</span>
+                    <span>{{$value['good_price'].split(".")[0]}}</span>
+                    <span class="ft12">.{{$value['good_price'].split(".")[1]}}</span>
+                    <span class="ft12">定金¥{{$value['book_amount']}}</span>
+                </p>
+                <p class="ft12">E宠价：¥{{$value['sale_price']}}</p>
+            </div>
+            <a href="###">去预定</a>
+        </div>
+    </div>
+</li>
+{{/each}}

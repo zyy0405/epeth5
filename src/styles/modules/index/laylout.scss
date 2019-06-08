@@ -1,12 +1,15 @@
 @import "../common/icons.scss";
 @import "../common/mixin.scss";
 html {
-  font-size: 26.67vm;
+  font-size: 26.67vw;
 }
 body {
   background-color: rgb(255, 255, 255);
 }
 #app {
+  height: 100%;
+}
+#index {
   height: 100%;
 }
 .container {
@@ -130,27 +133,40 @@ body {
   background: url(../images/index/newnavIco.png) no-repeat 0px -2px;
   background-size: 385px auto;
 }
-
-.container > nav > ul > li.active > a {
-  background-position: 0 -58px;
+.container {
+  > nav {
+    $backGroundPosition: 0 -52px -181px -113px -255px;
+    > ul {
+      @each $position in $backGroundPosition {
+        $i: index($backGroundPosition, $position);
+        li:nth-child(#{$i}) >a {
+          background-position: nth($backGroundPosition, $i) -2px;
+        }
+        li.active:nth-child(#{$i}) >a {
+          background-position: nth($backGroundPosition, $i) -58px;
+        }
+      }
+    }
+  }
 }
+// .container > nav > ul > li:nth-child(2) > a {
+//   background-position: -52px -2px;
+// }
 
-.container > nav > ul > li:nth-child(2) > a {
-  background-position: -52px -2px;
-}
+// .container > nav > ul > li:nth-child(3) > a {
+//   background-position: -181px -2px;
+// }
 
-.container > nav > ul > li:nth-child(3) > a {
-  background-position: -181px -2px;
-}
+// .container > nav > ul > li:nth-child(4) > a {
+//   background-position: -131px -2px;
+// }
 
-.container > nav > ul > li:nth-child(4) > a {
-  background-position: -113px -2px;
-}
-
-.container > nav > ul > li:nth-child(5) > a {
-  background-position: -255px -2px;
-}
-
+// .container > nav > ul > li:nth-child(5) > a {
+//   background-position: -255px -2px;
+// }
+// .container > nav > ul > li.active > a {
+//   background-position: 0 -58px;
+// }
 .container main > .banner {
   height: 0;
   margin-bottom: 77.3%;
