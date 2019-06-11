@@ -18,13 +18,13 @@ body {
   flex-direction: column;
 }
 
-.container main {
+.container > main {
   flex: 1;
   overflow-y: auto;
   height: 1000px;
 }
 
-.container > header {
+.container > main > header {
   position: fixed;
   width: 100%;
   height: 0.99rem;
@@ -36,7 +36,7 @@ body {
   background: transparent;
 }
 
-.container > header .search {
+.container > main > header .search {
   height: 30px;
   line-height: 30px;
   margin-top: 25px;
@@ -44,7 +44,7 @@ body {
   padding: 0 15px;
 }
 
-.container > header .search a:nth-child(1) {
+.container > main > header .search a:nth-child(1) {
   display: block;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 30px;
@@ -52,18 +52,18 @@ body {
   flex: 1;
 }
 
-.container > header .search a:nth-child(1) img {
+.container > main > header .search a:nth-child(1) img {
   width: 10px;
   vertical-align: middle;
   margin-left: 15px;
 }
 
-.container > header .search a:nth-child(1) span {
+.container > main > header .search a:nth-child(1) span {
   color: #666;
   font-size: 12px;
 }
 
-.container > header .search a:nth-child(2) {
+.container > main > header .search a:nth-child(2) {
   display: block;
   width: 25px;
   height: 25px;
@@ -72,40 +72,40 @@ body {
   background-size: 100%;
 }
 
-.container > header > nav {
+.container > main > header > nav {
   height: 44px;
   line-height: 44px;
 }
 
-.container > header > nav > ul {
+.container > main > header > nav > ul {
   height: 100%;
   display: flex;
 }
 
-.container > header > nav > ul > li {
+.container > main > header > nav > ul > li {
   flex: 0 0 22%;
   text-align: center;
 }
 
-.container > header > nav > ul > li a {
+.container > main > header > nav > ul > li a {
   color: #fff;
   font-size: 14px;
 }
 
-.container > header > nav > ul > li.active a {
+.container > main > header > nav > ul > li.active a {
   font-size: 20px;
   font-weight: 700;
 }
-.container > header.fixed {
+.container > main > header.fixed {
   background: #fff;
 }
-.container > header.fixed nav > ul > li a {
+.container > main > header.fixed nav > ul > li a {
   color: rgb(51, 51, 51);
 }
-.container > header .search a:nth-child(1) {
-  background: #f7f7f7;
+.container > main > header .search a:nth-child(1) {
+  background: rgba(255, 255, 255, 0.8);
 }
-.container > header.fixed .search a:nth-child(2) {
+.container > main > header.fixed .search a:nth-child(2) {
   background: url(../images/index/message2.png) no-repeat;
   background-size: 100%;
 }
@@ -139,10 +139,10 @@ body {
     > ul {
       @each $position in $backGroundPosition {
         $i: index($backGroundPosition, $position);
-        li:nth-child(#{$i}) >a {
+        li:nth-child(#{$i}) > a {
           background-position: nth($backGroundPosition, $i) -2px;
         }
-        li.active:nth-child(#{$i}) >a {
+        li.active:nth-child(#{$i}) > a {
           background-position: nth($backGroundPosition, $i) -58px;
         }
       }

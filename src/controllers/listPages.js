@@ -2,11 +2,6 @@ const listPages = require('../views/listPages.html')
 const listPagesListTpl = require('../views/listPages.list.html')
 const BScroll = require('better-scroll').default
 import fetch from '../models/fetch'
-// export default {
-//   render() {
-//     $('#index').html(listPages)
-//   }
-// }
 let listPagesList = []
 let currentPage = 1
 const render = async () => {
@@ -15,9 +10,17 @@ const render = async () => {
   let data = listPagesList = JSON.parse(result).good_list
   let renderListPagesListTpl = template.render(listPagesListTpl, { data })
   $(".goodsLists").html(renderListPagesListTpl)
-
+  bindEvent()
   // 实现下拉刷新和上拉加载
   betterScroll()
+}
+function bindEvent() {
+  $(".goBack").on("click", goBack)
+}
+// 返回上级路由
+function goBack(e) {
+  e.preventDefault()
+  history.back()
 }
 function betterScroll() {
   // Better scroll 实例化

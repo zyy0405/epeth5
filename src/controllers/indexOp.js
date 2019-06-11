@@ -5,13 +5,10 @@ module.exports = {
     },
     // 绑定事件
     bindEvent() {
-        console.log($(".backToTop"))
-
         $(".backToTop").on("click", this.backToTop.bind(this))
     },
     // 回到顶部初始化和改变header背景色
     toTopInit() {
-        console.log($(".backToTop"))
         $(".backToTop").hide()//隐藏to top按钮
         $("main").scroll(() => {
             this.headerFixed();
@@ -48,6 +45,5 @@ module.exports = {
         } else {
             $("header").addClass("fixed")
         }
-
     }
 }

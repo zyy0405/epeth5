@@ -1,0 +1,236 @@
+@import "../common/mixin.scss";
+body {
+  background: #f4f5f7;
+}
+// 搜索页面样式
+.searchBox {
+  display: flex;
+  flex-direction: column;
+  header {
+    display: flex;
+    padding: 0.07rem 0.12rem;
+    background: #fff;
+    > .goBack {
+      width: 0.16rem;
+      height: 0.16rem;
+      margin-top: 0.08rem;
+      border-top: 1px solid #999;
+      border-left: 1px solid #999;
+      //   @include border(1px 0 0 1px, #999);
+      @include compatibleTransform(rotate(-45deg));
+    }
+    > div {
+      flex: 1;
+      height: 0.35rem;
+      line-height: 0.35rem;
+      background: #f6f6f6;
+      padding: 0 0.1rem;
+      input {
+        width: 90%;
+        border: none;
+        background: #f6f6f6;
+        height: 0.35rem;
+        line-height: 0.35rem;
+        font-size: 0.14rem;
+      }
+      label {
+        img {
+          height: 0.16rem;
+          margin-top: -0.02rem;
+        }
+      }
+    }
+    > a.searchBtn {
+      line-height: 0.32rem;
+      margin-left: 0.05rem;
+      color: #333;
+      font-size: 0.16rem;
+    }
+  }
+  main {
+    flex: 1;
+    .boutiqueRecommend {
+      p {
+        background: #fbfbfd;
+        height: 0.3rem;
+        line-height: 0.3rem;
+        padding-left: 0.12rem;
+        color: #666;
+        img {
+          height: 0.2rem;
+          margin: -0.02rem 0.05rem 0 0;
+        }
+      }
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 0.12rem 0.23rem;
+        li {
+          a {
+            display: block;
+            padding: 0.03rem 0.1rem;
+            margin: 0.1rem 0.1rem 0 0;
+            color: #999;
+            font-size: 0.12rem;
+            border-radius: 0.15rem;
+            background: #fff;
+          }
+        }
+      }
+    }
+    .recently {
+      p {
+        background: #fbfbfd;
+        height: 0.3rem;
+        line-height: 0.3rem;
+        padding-left: 0.12rem;
+        color: #666;
+        img {
+          height: 0.2rem;
+          margin: -0.02rem 0.05rem 0 0;
+        }
+      }
+      ul {
+        padding-left: 0.12rem;
+        background: #fff;
+        li {
+          a {
+            display: block;
+            border-bottom: 1px solid #d7d7d7;
+            line-height: 0.4rem;
+            font-size: 0.12rem;
+            color: #333;
+          }
+          &:last-child {
+            a {
+              border-bottom: none;
+            }
+          }
+        }
+      }
+    }
+    .clearHistory {
+      width: 60%;
+      margin: 0.4rem auto 0.6rem;
+      line-height: 0.4rem;
+      font-size: 0.15rem;
+      border: 1px solid #777;
+      border-radius: 0.05rem;
+      text-align: center;
+    }
+  }
+}
+
+// 商品搜索列表页面样式
+.searchListPages {
+  background: #fff;
+  overflow-y: scroll;
+  height: 100%;
+  header {
+    height: 0.5rem;
+    line-height: 0.5rem;
+    // padding: 0 10rem;
+    @include border(0 0 1px 0, #f3f3f3);
+    // border-bottom: 1rem solid #f3f3f3;
+    background: #fff;
+    display: flex;
+    a {
+      background: url(../images/listPages/topIco.png) 0 0 no-repeat;
+      background-size: 0.35rem auto;
+    }
+    a:first-child {
+      width: 0.35rem;
+      height: 0.35rem;
+      margin: 0.07rem 0 0 0.05rem;
+    }
+    span {
+      flex: 1;
+      text-align: center;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      font-size: 0.18rem;
+    }
+    a:last-child {
+      width: 0.35rem;
+      height: 0.35rem;
+      background-position: 0 -0.7rem;
+      margin: 0.07rem 0.05rem 0 0;
+    }
+  }
+  main {
+    .searchBox {
+      margin: 0.1rem;
+      padding: 0 0.1rem;
+      background: #f6f6f6;
+      height: 0.4rem;
+      line-height: 0.4rem;
+      border-radius: 0.05rem;
+      a {
+        display: flex;
+        img {
+          width: 0.15rem;
+          height: 0.15rem;
+          margin: 0.13rem 0 0 0.06rem;
+        }
+        input {
+          height: 0.4rem;
+          border-radius: 0.03rem;
+          border: none;
+          background: #f6f6f6;
+          font-family: "Microsoft Yahei", tahoma, arial;
+          width: 90%;
+          text-indent: 0.5rem;
+        }
+      }
+    }
+    ul {
+      li {
+        padding: 0.1rem;
+        // border-bottom: 1px solid #e7e7e7;
+        @include border(0 0 1px 0, #e7e7e7);
+        > a {
+          display: flex;
+          > img {
+            width: 1rem;
+            height: 1rem;
+          }
+          > div {
+            flex: 1;
+            position: relative;
+            margin-left: 0.1rem;
+            h1 {
+              font-size: 0.12rem;
+              height: 0.32rem;
+              overflow: hidden;
+              line-height: 0.16rem;
+              margin-bottom: 0.3rem;
+              color: #333;
+              font-weight: 400;
+            }
+            .price {
+              font-size: 14px;
+              color: #ff5757;
+            }
+            .interaction {
+              font-size: 12px;
+              color: #999;
+              span:last-child {
+                margin-left: 5px;
+              }
+            }
+            .cartIcon {
+              position: absolute;
+              bottom: 0;
+              right: 0.1rem;
+              width: 0.3rem;
+              img {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

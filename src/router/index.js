@@ -7,7 +7,8 @@ import cart from '../controllers/cart'
 import profile from '../controllers/profile'
 import details from '../controllers/details'
 import listPages from '../controllers/listPages'
-
+import search from '../controllers/search'
+import searchListPages from '../controllers/searchListPages'
 export default class Router {
   constructor(obj) {
     this.mode = obj.mode
@@ -18,6 +19,8 @@ export default class Router {
       '/index/home': home,
       '/index/listPages': listPages,
       '/index/details': details,
+      '/index/home/search': search,
+      '/index/searchListPages': searchListPages,
       '/index/home/selectCarefully': selectCarefully,
       '/index/home/classification': classification,
       '/index/home/littleCuteBook': littleCuteBook,

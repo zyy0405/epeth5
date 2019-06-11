@@ -1,0 +1,18 @@
+{{each data}}
+<li data-id="{{$value['gid']}}">
+    <a href="">
+        <img src="{{$value['photo']}}" alt="">
+        <div>
+            <h1>{{$value['subject']}}</h1>
+            <p class="price">¥{{$value['sale_price']}}</p>
+            <div class="interaction">
+                <span>{{$value['comments']}}</span>
+                <span>{{$value['sold']}}</span>
+            </div>
+            <div class="cartIcon">
+                <img src="//static.epetbar.com/static_wap/epetapp/pages/index/images/addcart.png" alt="">
+            </div>
+        </div>
+    </a>
+</li>
+{{/each}}
