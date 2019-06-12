@@ -189,44 +189,49 @@ body {
         padding: 0.1rem;
         // border-bottom: 1px solid #e7e7e7;
         @include border(0 0 1px 0, #e7e7e7);
-        > a {
-          display: flex;
-          > img {
-            width: 1rem;
-            height: 1rem;
+        display: flex;
+        > img {
+          width: 1rem;
+          height: 1rem;
+        }
+        > div {
+          flex: 1;
+          position: relative;
+          margin-left: 0.1rem;
+          h1 {
+            font-size: 0.12rem;
+            height: 0.32rem;
+            overflow: hidden;
+            line-height: 0.16rem;
+            margin-bottom: 0.3rem;
+            color: #333;
+            font-weight: 400;
           }
-          > div {
-            flex: 1;
-            position: relative;
-            margin-left: 0.1rem;
-            h1 {
-              font-size: 0.12rem;
-              height: 0.32rem;
-              overflow: hidden;
-              line-height: 0.16rem;
-              margin-bottom: 0.3rem;
-              color: #333;
-              font-weight: 400;
-            }
-            .price {
+          .price {
+            span:first-child {
               font-size: 14px;
               color: #ff5757;
             }
-            .interaction {
-              font-size: 12px;
+            span:last-child {
+              margin-left: 0.07rem;
+              font-size: 0.12rem;
               color: #999;
-              span:last-child {
-                margin-left: 5px;
-              }
             }
-            .cartIcon {
-              position: absolute;
-              bottom: 0;
-              right: 0.1rem;
-              width: 0.3rem;
-              img {
-                width: 100%;
-              }
+          }
+          .interaction {
+            font-size: 12px;
+            color: #999;
+            span:last-child {
+              margin-left: 5px;
+            }
+          }
+          .cartIcon {
+            position: absolute;
+            bottom: 0;
+            right: 0.1rem;
+            width: 0.3rem;
+            img {
+              width: 100%;
             }
           }
         }

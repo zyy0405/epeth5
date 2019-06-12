@@ -2,6 +2,7 @@ const searchListPages = require('../views/searchListPages.html')
 const queryString = require('query-string');
 const searchListPagesListTpl = require('../views/searchListPages.list.html')
 import fetch from '../models/fetch'
+import Router from '../router/'
 export default {
     async render() {
         this.inputValue = queryString.parse(location.hash.split('?')[1]).inputValue
@@ -14,7 +15,16 @@ export default {
         this.bindEvent()
     },
     bindEvent() {
+        let _this = this
         $(".goBack").on("click", this.goBack)
+        $('.searchGoodsListPage').on('click', 'li', function () {
+            let id = $(this).attr('data-id')
+            _this.gotoPage(id)
+        })
+    },
+    gotoPage(id) {
+        let router = new Router({ mode: 'hash' })
+        router.push('/index/goodDetail?id=' + id)
     },
     // 返回上级路由
     goBack(e) {

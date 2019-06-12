@@ -1,0 +1,201 @@
+.m-details {
+  background: #f3f4f5;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  header {
+    height: 0.5rem;
+    line-height: 0.5rem;
+    // padding: 0 10rem;
+    @include border(0 0 1px 0, #f3f3f3);
+    // border-bottom: 1rem solid #f3f3f3;
+    background: #fff;
+    display: flex;
+    > a {
+      background: url(../images/listPages/topIco.png) 0 0 no-repeat;
+      background-size: 0.35rem auto;
+    }
+    > a:first-child {
+      width: 0.35rem;
+      height: 0.35rem;
+      margin: 0.07rem 0 0 0.05rem;
+    }
+    > a:last-child {
+      width: 0.35rem;
+      height: 0.35rem;
+      background-position: 0 -0.7rem;
+      margin: 0.07rem 0.05rem 0 0;
+    }
+    nav {
+      flex: 1;
+      text-align: center;
+      font-size: 0.18rem;
+      ul {
+        display: flex;
+        justify-content: center;
+        li {
+          a {
+            color: #333;
+            margin: 0 0.03rem;
+            padding-bottom: 0.13rem;
+          }
+        }
+        li.active {
+          border-bottom: 0.02rem solid #f03e3e;
+        }
+      }
+    }
+  }
+  > main {
+    overflow-y: auto;
+  }
+}
+.good {
+  main {
+    flex: 1;
+    overflow-y: auto;
+    .detailsBanner {
+      img {
+        width: 100%;
+      }
+    }
+    .info {
+      background: #fff;
+      padding: 0 0.1rem 0.1rem;
+      margin-bottom: 0.1rem;
+      > p:nth-child(1) {
+        font-size: 0.13rem;
+        color: #333333;
+      }
+      > p:nth-child(2) {
+        font-size: 0.12rem;
+        color: #e75656;
+      }
+      > div {
+        display: flex;
+        margin-top: 0.1rem;
+        border-top: #e5e5e5 solid 1px;
+        > span {
+          flex: 1;
+          font-size: 0;
+          color: #ea5858;
+          span:nth-child(1) {
+            font-size: 0.12rem;
+          }
+          span:nth-child(2) {
+            font-size: 0.2rem;
+            margin-right: 0.1rem;
+          }
+          span:nth-child(3) {
+            font-size: 0.12rem;
+            color: #333;
+            text-decoration: line-through;
+          }
+        }
+        > a {
+          align-self: flex-end;
+          img {
+            height: 0.25rem;
+          }
+        }
+      }
+    }
+    .cartDetails {
+      background: #fff;
+      padding: 0.1rem;
+      display: flex;
+      align-items: center;
+      > span {
+        width: 20%;
+        color: #333;
+      }
+      > div {
+        font-size: 0.2rem;
+        color: #999;
+        border: 1px solid #999;
+        border-radius: 0.05rem;
+        display: flex;
+        span {
+          width: 0.3rem;
+          height: 0.3rem;
+          text-align: center;
+          line-height: 0.28rem;
+        }
+        span:first-child {
+          border-right: 1px solid #999;
+        }
+        input {
+          border: none;
+          text-align: center;
+          width: 0.48rem;
+          height: 0.3rem;
+          font-size: 0.18rem;
+          color: #f03e3e;
+        }
+        span:last-child {
+          border-left: 1px solid #999;
+        }
+      }
+    }
+  }
+  > footer {
+    height: 0.5rem;
+    background: #f5f6f8;
+    display: flex;
+    > div:first-child {
+      flex: 1;
+      display: flex;
+      a {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        i {
+          background-image: url(../images/details/s1.png);
+          width: 0.2rem;
+          height: 0.19rem;
+          background-position: 0 -0.2rem;
+          background-size: 100%;
+          margin: 0.05rem;
+        }
+        > span {
+          color: #999;
+          font-size: 12px;
+        }
+      }
+      a:last-child {
+        i {
+          background-image: url(../images/details/car.png);
+          position: relative;
+          span {
+            position: absolute;
+            padding: 0.02rem 0.04rem;
+            top: -0.03rem;
+            right: -60%;
+            border-radius: 0.08rem;
+            background: #f03e3e;
+            color: #fff;
+            font-size: 12px;
+            line-height: 1;
+          }
+        }
+      }
+    }
+    > .addCartBtn {
+      color: #fff;
+      height: 0.5rem;
+      width: 50%;
+      background-color: #f03e3e;
+      line-height: 0.5rem;
+      text-align: center;
+      cursor: pointer;
+      font-size: 0.15rem;
+    }
+  }
+}
+.details {
+  img {
+    width: 100%;
+  }
+}

@@ -5,10 +5,14 @@ import classification from '../controllers/classification'
 import littleCuteBook from '../controllers/littleCuteBook'
 import cart from '../controllers/cart'
 import profile from '../controllers/profile'
-import details from '../controllers/details'
 import listPages from '../controllers/listPages'
 import search from '../controllers/search'
 import searchListPages from '../controllers/searchListPages'
+import goodDetail from '../controllers/goodDetail'
+import good from '../controllers/good'
+import details from '../controllers/details'
+import comments from '../controllers/comments'
+
 export default class Router {
   constructor(obj) {
     this.mode = obj.mode
@@ -18,12 +22,15 @@ export default class Router {
       '/index': index,
       '/index/home': home,
       '/index/listPages': listPages,
-      '/index/details': details,
       '/index/home/search': search,
       '/index/searchListPages': searchListPages,
       '/index/home/selectCarefully': selectCarefully,
       '/index/home/classification': classification,
       '/index/home/littleCuteBook': littleCuteBook,
+      '/index/goodDetail': goodDetail,
+      '/index/goodDetail/good': good,
+      '/index/goodDetail/details': details,
+      '/index/goodDetail/comments': comments,
       '/index/home/cart': cart,
       '/index/home/profile': profile
     }
@@ -83,6 +90,9 @@ export default class Router {
     }
     // 获取当前路径,默认'/index'
     var currentURL = location.hash.slice(1).split('?')[0] || '/index/home/selectCarefully';
+    if (currentURL == '/index/goodDetail') {
+      currentURL = '/index/goodDetail/good'
+    }
     this.loadView(currentURL)
   }
   /**

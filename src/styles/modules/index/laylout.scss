@@ -233,7 +233,7 @@ body {
 .swiper-container-horizontal > .swiper-pagination-bullets {
   bottom: 15%;
 }
-.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+.banner .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
   width: 6px;
   height: 6px;
   border: 1px solid #fff;
@@ -242,7 +242,7 @@ body {
   @include compatibleTransition(all 0.25s ease);
 }
 
-.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet-active {
+.banner .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet-active {
   background: #fff;
   width: 16px;
   border-radius: 30px;
