@@ -11,8 +11,8 @@ export default {
         e.preventDefault();
         this.value = $(".searchInput").val()
         if (this.value != "") {
-            let router = new Router({ mode: 'hash' })
-            router.push('/index/searchListPages?inputValue=' + this.value)
+            // let router = new Router({ mode: 'hash' })
+            window.router.push('/index/searchListPages?inputValue=' + this.value)
         }
 
     }

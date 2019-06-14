@@ -1,3 +1,33 @@
-<div>
-    评价
+<div class="comments">
+    <ul>
+        {{each data}}
+        <li>
+            <div class="userInfo">
+                <div>
+                    <img src="{{$value['avatar']}}" alt="">
+                </div>
+                <div>
+                    <p>
+                        <span>{{$value['nickname']}}</span>
+                        <img src="{{$value['user_level_icon']}}" alt="">
+                    </p>
+                    <p>{{$value['register_time']}}</p>
+                </div>
+                <div>
+                    <img src="https://wap.epet.com/app/img/x5.481510fc.png" alt="">
+                </div>
+            </div>
+            <p class="text">{{$value['content']}}</p>
+            <div class="imgBox">
+                {{each $value['photos'] value index}}
+                <img src="{{value}}" alt="">
+                {{/each}}
+            </div>
+            <div class="bottomInfo">
+                <span>{{$value['publish_time']}}</span>
+                <span>{{$value['praise_icon']['num']}}</span>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
 </div>

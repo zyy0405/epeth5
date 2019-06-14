@@ -1187,7 +1187,7 @@ body {
         height: 0.35rem;
         line-height: 0.35rem;
         font-size: 0.14rem; }
-      .searchBox header > div label img {
+      .searchBox header > div a.searchIcon img {
         height: 0.16rem;
         margin-top: -0.02rem; }
     .searchBox header > a.searchBtn {
@@ -1457,120 +1457,173 @@ body {
         .m-details header nav ul li.active {
           border-bottom: 0.02rem solid #f03e3e; }
   .m-details > main {
+    flex: 1;
     overflow-y: auto; }
 
-.good main {
-  flex: 1;
-  overflow-y: auto; }
-  .good main .detailsBanner img {
-    width: 100%; }
-  .good main .info {
-    background: #fff;
-    padding: 0 0.1rem 0.1rem;
-    margin-bottom: 0.1rem; }
-    .good main .info > p:nth-child(1) {
-      font-size: 0.13rem;
-      color: #333333; }
-    .good main .info > p:nth-child(2) {
-      font-size: 0.12rem;
-      color: #e75656; }
-    .good main .info > div {
-      display: flex;
-      margin-top: 0.1rem;
-      border-top: #e5e5e5 solid 1px; }
-      .good main .info > div > span {
-        flex: 1;
-        font-size: 0;
-        color: #ea5858; }
-        .good main .info > div > span span:nth-child(1) {
-          font-size: 0.12rem; }
-        .good main .info > div > span span:nth-child(2) {
-          font-size: 0.2rem;
-          margin-right: 0.1rem; }
-        .good main .info > div > span span:nth-child(3) {
-          font-size: 0.12rem;
-          color: #333;
-          text-decoration: line-through; }
-      .good main .info > div > a {
-        align-self: flex-end; }
-        .good main .info > div > a img {
-          height: 0.25rem; }
-  .good main .cartDetails {
-    background: #fff;
-    padding: 0.1rem;
-    display: flex;
-    align-items: center; }
-    .good main .cartDetails > span {
-      width: 20%;
-      color: #333; }
-    .good main .cartDetails > div {
-      font-size: 0.2rem;
-      color: #999;
-      border: 1px solid #999;
-      border-radius: 0.05rem;
-      display: flex; }
-      .good main .cartDetails > div span {
-        width: 0.3rem;
-        height: 0.3rem;
-        text-align: center;
-        line-height: 0.28rem; }
-      .good main .cartDetails > div span:first-child {
-        border-right: 1px solid #999; }
-      .good main .cartDetails > div input {
-        border: none;
-        text-align: center;
-        width: 0.48rem;
-        height: 0.3rem;
-        font-size: 0.18rem;
-        color: #f03e3e; }
-      .good main .cartDetails > div span:last-child {
-        border-left: 1px solid #999; }
-
-.good > footer {
-  height: 0.5rem;
-  background: #f5f6f8;
-  display: flex; }
-  .good > footer > div:first-child {
+.good {
+  display: flex;
+  flex-direction: column;
+  height: 100%; }
+  .good main {
     flex: 1;
-    display: flex; }
-    .good > footer > div:first-child a {
-      flex: 1;
+    overflow-y: auto; }
+    .good main .detailsBanner img {
+      width: 100%; }
+    .good main .info {
+      background: #fff;
+      padding: 0 0.1rem 0.1rem;
+      margin-bottom: 0.1rem; }
+      .good main .info > p:nth-child(1) {
+        font-size: 0.13rem;
+        color: #333333; }
+      .good main .info > p:nth-child(2) {
+        font-size: 0.12rem;
+        color: #e75656; }
+      .good main .info > div {
+        display: flex;
+        margin-top: 0.1rem;
+        border-top: #e5e5e5 solid 1px; }
+        .good main .info > div > span {
+          flex: 1;
+          font-size: 0;
+          color: #ea5858; }
+          .good main .info > div > span span:nth-child(1) {
+            font-size: 0.12rem; }
+          .good main .info > div > span span:nth-child(2) {
+            font-size: 0.2rem;
+            margin-right: 0.1rem; }
+          .good main .info > div > span span:nth-child(3) {
+            font-size: 0.12rem;
+            color: #333;
+            text-decoration: line-through; }
+        .good main .info > div > a {
+          align-self: flex-end; }
+          .good main .info > div > a img {
+            height: 0.25rem; }
+    .good main .cartDetails {
+      background: #fff;
+      padding: 0.1rem;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center; }
-      .good > footer > div:first-child a i {
-        background-image: url(../images/details/s1.png);
-        width: 0.2rem;
-        height: 0.19rem;
-        background-position: 0 -0.2rem;
-        background-size: 100%;
-        margin: 0.05rem; }
-      .good > footer > div:first-child a > span {
+      align-items: center; }
+      .good main .cartDetails > span {
+        width: 20%;
+        color: #333; }
+      .good main .cartDetails > div {
+        font-size: 0.2rem;
         color: #999;
-        font-size: 12px; }
-    .good > footer > div:first-child a:last-child i {
-      background-image: url(../images/details/car.png);
-      position: relative; }
-      .good > footer > div:first-child a:last-child i span {
-        position: absolute;
-        padding: 0.02rem 0.04rem;
-        top: -0.03rem;
-        right: -60%;
-        border-radius: 0.08rem;
-        background: #f03e3e;
-        color: #fff;
-        font-size: 12px;
-        line-height: 1; }
-  .good > footer > .addCartBtn {
-    color: #fff;
+        border: 1px solid #999;
+        border-radius: 0.05rem;
+        display: flex; }
+        .good main .cartDetails > div span {
+          width: 0.3rem;
+          height: 0.3rem;
+          text-align: center;
+          line-height: 0.28rem; }
+        .good main .cartDetails > div span:first-child {
+          border-right: 1px solid #999; }
+        .good main .cartDetails > div input {
+          border: none;
+          text-align: center;
+          width: 0.48rem;
+          height: 0.3rem;
+          font-size: 0.18rem;
+          color: #f03e3e; }
+        .good main .cartDetails > div span:last-child {
+          border-left: 1px solid #999; }
+  .good > footer {
     height: 0.5rem;
-    width: 50%;
-    background-color: #f03e3e;
-    line-height: 0.5rem;
-    text-align: center;
-    cursor: pointer;
-    font-size: 0.15rem; }
+    background: #f5f6f8;
+    display: flex; }
+    .good > footer > div:first-child {
+      flex: 1;
+      display: flex; }
+      .good > footer > div:first-child a {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; }
+        .good > footer > div:first-child a i {
+          background-image: url(../images/details/s1.png);
+          width: 0.2rem;
+          height: 0.19rem;
+          background-position: 0 -0.2rem;
+          background-size: 100%;
+          margin: 0.05rem; }
+        .good > footer > div:first-child a > span {
+          color: #999;
+          font-size: 12px; }
+      .good > footer > div:first-child a:last-child i {
+        background-image: url(../images/details/car.png);
+        position: relative; }
+        .good > footer > div:first-child a:last-child i span {
+          position: absolute;
+          padding: 0.02rem 0.04rem;
+          top: -0.03rem;
+          right: -60%;
+          border-radius: 0.08rem;
+          background: #f03e3e;
+          color: #fff;
+          font-size: 12px;
+          line-height: 1; }
+    .good > footer > .addCartBtn {
+      color: #fff;
+      height: 0.5rem;
+      width: 50%;
+      background-color: #f03e3e;
+      line-height: 0.5rem;
+      text-align: center;
+      cursor: pointer;
+      font-size: 0.15rem; }
 
 .details img {
   width: 100%; }
+
+.comments ul {
+  padding: 0 0.15rem; }
+  .comments ul li {
+    padding: 0.15rem;
+    margin-top: 0.2rem;
+    box-shadow: 0 0.05rem 0.11rem 0 rgba(0, 0, 0, 0.1);
+    border-radius: 0.15rem; }
+    .comments ul li .userInfo {
+      display: flex; }
+      .comments ul li .userInfo > div:nth-child(1) img {
+        width: 0.4rem;
+        height: 0.4rem;
+        border-radius: 50%;
+        border: 1px solid #eee; }
+      .comments ul li .userInfo > div:nth-child(2) {
+        font-size: 0.12rem;
+        flex: 1;
+        margin-left: 0.05rem; }
+        .comments ul li .userInfo > div:nth-child(2) p:first-child span {
+          color: #333;
+          margin-right: 0.05rem; }
+        .comments ul li .userInfo > div:nth-child(2) p:first-child img {
+          height: 0.13rem; }
+        .comments ul li .userInfo > div:nth-child(2) p:last-child {
+          color: #999; }
+      .comments ul li .userInfo > div:nth-child(3) img {
+        width: 0.6rem; }
+    .comments ul li .text {
+      color: #333;
+      font-size: 0.13rem;
+      margin-top: 0.05rem;
+      margin-bottom: 0.15rem; }
+    .comments ul li .imgBox img {
+      width: 25%;
+      border-radius: 0.05rem;
+      margin: 0 0.02rem; }
+    .comments ul li .bottomInfo {
+      display: flex;
+      color: #999;
+      font-size: 0.12rem;
+      margin-top: 0.05rem; }
+      .comments ul li .bottomInfo span:first-child {
+        margin-top: 0.03rem;
+        flex: 1; }
+      .comments ul li .bottomInfo span:last-child {
+        padding-left: 0.2rem;
+        background: url(../images/details/icon.png) no-repeat -8px -44px;
+        background-size: 105px auto; }

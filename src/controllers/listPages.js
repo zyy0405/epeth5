@@ -6,6 +6,8 @@ let listPagesList = []
 let currentPage = 1
 const render = async () => {
   $('#index').html(listPages)
+  let dom = $('<img src="../images/loading.gif" style="width:100%;height:100%;">')
+  $('.goodsLists').html(dom)
   let result = await fetch.get('/api/v3/book/list.html?pettype=dog&subid=7&groupid=2&page=1&system=wap&isWeb=1&version=303&distinct_id=16b2c20fb3a3b4-0c9a3a62a4fbe8-2d604637-250125-16b2c20fb3b547&_=1559980791018')
   let data = listPagesList = JSON.parse(result).good_list
   let renderListPagesListTpl = template.render(listPagesListTpl, { data })
@@ -40,7 +42,6 @@ function betterScroll() {
   bScroll.on('scroll', function () {
     let y = this.y
     let maxY = this.maxScrollY - y
-    console.log(y)
     // 下拉，当隐藏的loading完全显示的时候触发
     if (y >= 0) {
       !topImgHasClass && head.addClass('up')

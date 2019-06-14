@@ -41,11 +41,21 @@ export default class Router {
     this.init()
   }
 
+  loadCB(e) {
+    this.hashRefresh(e)
+  }
+  hashChangeCB(e) {
+    this.hashRefresh(e)
+  }
+
   init() {
     index.render()
     if (this.mode === 'hash') {
       window.addEventListener('load', this.hashRefresh.bind(this), false);
       window.addEventListener('hashchange', this.hashRefresh.bind(this), false);
+      // window.addEventListener('load', this.loadCB.bind(this), false);
+      // window.addEventListener('hashchange', this.hashChangeCB.bind(this), false);
+
     } else {
       this.bindLink()
       window.addEventListener('load', this.loadView.bind(this, location.pathname));
@@ -83,16 +93,15 @@ export default class Router {
    * @param {object} e
    */
   hashRefresh(e) {
-    // console.log(e)
     if (e.newURL) {
       var newURL = e.newURL.split('#')[1];
       var oldURL = e.oldURL.split('#')[1];
     }
     // 获取当前路径,默认'/index'
     var currentURL = location.hash.slice(1).split('?')[0] || '/index/home/selectCarefully';
-    if (currentURL == '/index/goodDetail') {
-      currentURL = '/index/goodDetail/good'
-    }
+    // if (currentURL == '/index/goodDetail') {
+    //   currentURL = '/index/goodDetail/good'
+    // }
     this.loadView(currentURL)
   }
   /**
@@ -117,6 +126,10 @@ export default class Router {
       }, null, '/')
       currentURL = '/index/home/selectCarefully'
     }
+    if (this.lastURL && this.lastURL == currentURL) {
+      return;
+    }
+    this.lastURL = currentURL
     // 多级链接拆分为数组,遍历依次加载
     this.currentURLlist = currentURL.slice(1).split('/')
     this.url = ""
@@ -153,7 +166,7 @@ export default class Router {
       // 相同路由部分不重新加载
       if (item !== this.oldURL[index]) {
         this.controller(this.name)
-        console.log('解绑状态监听事件')
+        // console.log('解绑状态监听事件')
         store.getSubject().unsubscribe('stateChange')
       }
     }

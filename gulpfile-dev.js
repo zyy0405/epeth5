@@ -30,7 +30,7 @@ function copyicons() {
 function webserver() {
   return src('./dev')
     .pipe(gulpWebserver({
-      host: 'localhost',
+      host: '10.9.65.226',
       port: 8000,
       livereload: true,
       middleware: [

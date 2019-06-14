@@ -10,6 +10,7 @@
 // indexOperate.init()
 import Router from './router/'
 
-new Router({
+
+window.router = new Router({
     mode: 'hash' // hash | history
 })

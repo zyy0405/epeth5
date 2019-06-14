@@ -8,10 +8,18 @@ export default {
   },
   bindEvent() {
     $(".goBack").on("click", this.goBack)
+
+    // $(".searchBtn").on("click", this.stop)
+  },
+  stop(e) {
+    e.preventDefault()
+    e.stopPropagation()
+    location.hash = "#/index/searchListPages"
   },
   // 返回上级路由
   goBack(e) {
     e.preventDefault()
-    history.back()
+    // history.back()
+    window.router.push('/index/home/selectCarefully')
   }
 }
