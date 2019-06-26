@@ -6,14 +6,16 @@ export default {
     },
     bindEvent() {
         $(".searchBtn").on("click", this.toSearchPage);
+        $('.searchAKey').on('click', this.toSearchPage)
     },
     toSearchPage(e) {
         e.preventDefault();
         this.value = $(".searchInput").val()
-        if (this.value != "") {
-            // let router = new Router({ mode: 'hash' })
+        console.log($(e.target).html())
+        if (e.target.className === 'searchAKey') {
+            window.router.push('/index/searchListPages?inputValue=' + $(e.target).html())
+        } else if (this.value != "") {
             window.router.push('/index/searchListPages?inputValue=' + this.value)
         }
-
     }
 }

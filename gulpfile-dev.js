@@ -30,10 +30,14 @@ function copyicons() {
 function webserver() {
   return src('./dev')
     .pipe(gulpWebserver({
-      host: '10.9.65.226',
+      host: 'localhost',
       port: 8000,
       livereload: true,
       middleware: [
+        proxy('/fe/api', {
+          target: 'http://localhost:3000',
+          changeOrigin: true, // 访问不同的域名，需要配置成 true
+        }),
         proxy('/api', {
           target: 'https://mall.api.epet.com',
           changeOrigin: true, // 访问不同的域名，需要配置成 true
@@ -76,9 +80,9 @@ function packjs() {
               options: {
                 presets: ['@babel/preset-env'],
                 plugins: [['@babel/plugin-transform-runtime',
-                    {
-                      "helpers": false
-                    }]
+                  {
+                    "helpers": false
+                  }]
                 ]
               }
             }

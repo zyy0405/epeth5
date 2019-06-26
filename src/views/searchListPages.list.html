@@ -1,10 +1,10 @@
 {{each data}}
 <li data-id="{{$value['gid']}}">
-    <img src="{{$value['photo']}}" alt="">
+    <img src="http://localhost:3000/upload/{{$value['photo']}}" alt="">
     <div>
         <h1>{{$value['subject']}}</h1>
         <p class="price">
-            <span>¥{{$value['sale_price']}}</span>
+            <span>{{$value['sale_price']}}</span>
             <span>{{$value['dprice']}}</span>
         </p>
         <div class="interaction">

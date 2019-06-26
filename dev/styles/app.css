@@ -1312,11 +1312,12 @@ body {
     line-height: 0.4rem;
     border-radius: 0.05rem; }
     .searchListPages main .searchBox a {
-      display: flex; }
+      display: flex;
+      color: #333; }
       .searchListPages main .searchBox a img {
         width: 0.15rem;
         height: 0.15rem;
-        margin: 0.13rem 0 0 0.06rem; }
+        margin: 0.15rem 0 0 0.06rem; }
       .searchListPages main .searchBox a input {
         height: 0.4rem;
         border-radius: 0.03rem;
@@ -1324,7 +1325,7 @@ body {
         background: #f6f6f6;
         font-family: "Microsoft Yahei", tahoma, arial;
         width: 90%;
-        text-indent: 0.5rem; }
+        text-indent: 0.05rem; }
   .searchListPages main ul li {
     padding: 0.1rem;
     position: relative;

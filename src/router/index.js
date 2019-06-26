@@ -13,6 +13,11 @@ import good from '../controllers/good'
 import details from '../controllers/details'
 import comments from '../controllers/comments'
 
+let socket = io.connect('http://localhost:8082')
+socket.on('message', function (msg) {
+  console.log(0)
+  searchListPages.render()
+})
 export default class Router {
   constructor(obj) {
     this.mode = obj.mode
